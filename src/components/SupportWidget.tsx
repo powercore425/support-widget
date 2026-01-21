@@ -236,7 +236,7 @@ const SupportWidget = () => {
 
       {/* Widget Panel */}
       {isOpen && (
-        <div className="fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 sm:w-96 sm:h-[600px] w-full h-full sm:rounded-lg shadow-2xl flex flex-col z-50 border border-gray-200">
+        <div className="fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 sm:top-auto sm:w-96 sm:max-h-[calc(100vh-3rem)] sm:h-[600px] w-full h-full sm:rounded-lg shadow-2xl flex flex-col z-50 border border-gray-200 overflow-hidden">
           {/* Header */}
           <div className="bg-blue-600 text-white p-3 sm:p-4 rounded-t-lg sm:rounded-t-lg flex justify-between items-center">
             <div className="flex items-center gap-2 min-w-0 flex-1">
