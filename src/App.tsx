@@ -2,10 +2,11 @@ import { useState } from 'react';
 import SupportWidget from './components/SupportWidget';
 import AgentDashboard from './components/AgentDashboard';
 import ThemeToggle from './components/ThemeToggle';
-import { seedFAQs } from './scripts/seedFAQs';
+//import { seedFAQs } from './scripts/seedFAQs';
 
 function App() {
   const [view, setView] = useState<'user' | 'agent'>('user');
+  /*
   const [isSeeding, setIsSeeding] = useState(false);
 
   const handleSeedFAQs = async () => {
@@ -20,6 +21,7 @@ function App() {
       setIsSeeding(false);
     }
   };
+  */
 
   if (view === 'agent') {
     return <AgentDashboard />;
