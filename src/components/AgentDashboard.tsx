@@ -4,7 +4,6 @@ import {
   subscribeToMessages, 
   sendAgentMessage,
   markMessagesAsReadByIds,
-  markMessagesAsRead,
   subscribeToUnreadCounts,
   Message 
 } from '../firebase/services';
@@ -52,7 +51,7 @@ const AgentDashboard = () => {
     const unsubscribeConversations = subscribeToConversations((newConversations) => {
       // CRITICAL: Preserve the currently selected conversation
       // Never auto-select conversations, even when new messages arrive
-      const currentSelection = selectedConversationRef.current;
+      //const currentSelection = selectedConversationRef.current;
       
       // Simply update the conversations list
       // The selected conversation ID is stored separately and won't change
