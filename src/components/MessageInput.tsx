@@ -34,7 +34,7 @@ const MessageInput = ({ onSendMessage, disabled }: MessageInputProps) => {
   };
 
   return (
-    <div className="p-3 sm:p-4 border-t border-gray-200 bg-white">
+    <div className="p-3 sm:p-4 border-t border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 transition-colors">
       <div className="flex items-end gap-2">
         <textarea
           ref={textareaRef}
@@ -44,12 +44,12 @@ const MessageInput = ({ onSendMessage, disabled }: MessageInputProps) => {
           placeholder="Type your message..."
           disabled={disabled}
           rows={1}
-          className="flex-1 resize-none border border-gray-300 rounded-lg px-3 py-2 text-sm sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed max-h-32 overflow-y-auto"
+          className="flex-1 resize-none border border-gray-300 dark:border-gray-600 rounded-lg px-3 py-2 text-sm sm:text-sm focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:border-transparent disabled:bg-gray-100 dark:disabled:bg-gray-700 disabled:cursor-not-allowed max-h-32 overflow-y-auto bg-white dark:bg-gray-900 text-gray-900 dark:text-gray-100 placeholder-gray-500 dark:placeholder-gray-400 transition-colors"
         />
         <button
           onClick={handleSend}
           disabled={disabled || !message.trim()}
-          className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 disabled:bg-gray-300 disabled:cursor-not-allowed text-white rounded-lg p-2.5 sm:p-2 transition-colors touch-manipulation flex-shrink-0"
+          className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 dark:bg-blue-500 dark:hover:bg-blue-600 dark:active:bg-blue-700 disabled:bg-gray-300 dark:disabled:bg-gray-600 disabled:cursor-not-allowed text-white rounded-lg p-2.5 sm:p-2 transition-colors touch-manipulation flex-shrink-0"
           aria-label="Send message"
         >
           <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -225,7 +225,7 @@ const SupportWidget = () => {
             setIsChattingWithAgent(false);
             setShowFAQs(true);
           }}
-          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 text-white rounded-full p-3 sm:p-4 shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 z-50 touch-manipulation"
+          className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 bg-blue-600 hover:bg-blue-700 active:bg-blue-800 dark:bg-blue-500 dark:hover:bg-blue-600 dark:active:bg-blue-700 text-white rounded-full p-3 sm:p-4 shadow-lg transition-all duration-200 hover:scale-110 active:scale-95 z-50 touch-manipulation"
           aria-label="Open support widget"
         >
           <svg className="w-5 h-5 sm:w-6 sm:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -236,9 +236,9 @@ const SupportWidget = () => {
 
       {/* Widget Panel */}
       {isOpen && (
-        <div className="fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 sm:top-auto sm:w-96 sm:max-h-[calc(100vh-3rem)] sm:h-[600px] w-full h-full sm:rounded-lg shadow-2xl flex flex-col z-50 border border-gray-200 overflow-hidden">
+        <div className="fixed inset-0 sm:inset-auto sm:bottom-6 sm:right-6 sm:top-auto sm:w-96 sm:max-h-[calc(100vh-3rem)] sm:h-[600px] w-full h-full sm:rounded-lg shadow-2xl flex flex-col z-50 border border-gray-200 dark:border-gray-700 overflow-hidden bg-white dark:bg-gray-800 transition-colors">
           {/* Header */}
-          <div className="bg-blue-600 text-white p-3 sm:p-4 rounded-t-lg sm:rounded-t-lg flex justify-between items-center">
+          <div className="bg-blue-600 dark:bg-blue-700 text-white p-3 sm:p-4 rounded-t-lg sm:rounded-t-lg flex justify-between items-center transition-colors">
             <div className="flex items-center gap-2 min-w-0 flex-1">
               {isChattingWithAgent && (
                 <button
@@ -281,12 +281,12 @@ const SupportWidget = () => {
           </div>
 
           {/* Messages Area */}
-          <div className="flex-1 overflow-y-auto p-3 sm:p-4 bg-gray-50">
+          <div className="flex-1 overflow-y-auto p-3 sm:p-4 bg-gray-50 dark:bg-gray-900 transition-colors">
             {/* Show FAQs view when not chatting with agent and FAQs should be shown */}
             {!isChattingWithAgent && showFAQs && faqs.length > 0 && (
               <>
                 {messages.length === 0 && (
-                  <div className="text-center text-gray-500 mb-4">
+                  <div className="text-center text-gray-500 dark:text-gray-400 mb-4">
                     <p className="text-sm font-medium">Browse FAQs or start a conversation</p>
                   </div>
                 )}
@@ -302,7 +302,7 @@ const SupportWidget = () => {
             {isChattingWithAgent && (
               <>
                 {messages.length === 0 && (
-                  <div className="text-center text-gray-500 mt-8">
+                  <div className="text-center text-gray-500 dark:text-gray-400 mt-8">
                     <p className="text-lg font-medium mb-2">Welcome! 👋</p>
                     <p>You're connected to our support team</p>
                   </div>
@@ -314,7 +314,7 @@ const SupportWidget = () => {
 
             {/* Show welcome message when no FAQs, no messages, and not chatting */}
             {!isChattingWithAgent && !showFAQs && messages.length === 0 && faqs.length === 0 && (
-              <div className="text-center text-gray-500 mt-8">
+              <div className="text-center text-gray-500 dark:text-gray-400 mt-8">
                 <p className="text-lg font-medium mb-2">Welcome! 👋</p>
                 <p>How can we help you today?</p>
               </div>
@@ -322,12 +322,12 @@ const SupportWidget = () => {
 
             {isLoading && (
               <div className="flex justify-center my-4">
-                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600"></div>
+                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-blue-600 dark:border-blue-400"></div>
               </div>
             )}
             {isInitializing && (
               <div className="flex justify-center my-2">
-                <p className="text-xs text-gray-500">Initializing conversation...</p>
+                <p className="text-xs text-gray-500 dark:text-gray-400">Initializing conversation...</p>
               </div>
             )}
           </div>

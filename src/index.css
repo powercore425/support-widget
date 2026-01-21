@@ -11,6 +11,25 @@ body {
   -moz-osx-font-smoothing: grayscale;
   /* Prevent text selection on mobile for better UX */
   -webkit-tap-highlight-color: transparent;
+  background-color: rgb(243 244 246); /* gray-100 */
+  color: rgb(17 24 39); /* gray-900 */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dark body {
+  background-color: rgb(17 24 39); /* gray-900 */
+  color: rgb(243 244 246); /* gray-100 */
+}
+
+html {
+  background-color: rgb(243 244 246); /* gray-100 */
+  color: rgb(17 24 39); /* gray-900 */
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.dark html {
+  background-color: rgb(17 24 39); /* gray-900 */
+  color: rgb(243 244 246); /* gray-100 */
 }
 
 #root {
@@ -18,6 +37,8 @@ body {
   height: 100vh;
   /* Prevent horizontal scroll on mobile */
   overflow-x: hidden;
+  background-color: inherit;
+  color: inherit;
 }
 
 /* Touch-friendly interactions */

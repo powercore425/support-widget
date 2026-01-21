@@ -26,10 +26,10 @@ const MessageList = ({ messages }: MessageListProps) => {
             <div
               className={`max-w-[85%] sm:max-w-[80%] rounded-lg px-3 py-2 sm:px-4 sm:py-2 ${
                 isUser
-                  ? 'bg-blue-600 text-white'
+                  ? 'bg-blue-600 dark:bg-blue-500 text-white'
                   : isAgent
-                  ? 'bg-green-600 text-white'
-                  : 'bg-white text-gray-800 border border-gray-200'
+                  ? 'bg-green-600 dark:bg-green-500 text-white'
+                  : 'bg-white dark:bg-gray-800 text-gray-800 dark:text-gray-200 border border-gray-200 dark:border-gray-700'
               }`}
             >
               {isAgent && message.agentName && (
@@ -40,7 +40,7 @@ const MessageList = ({ messages }: MessageListProps) => {
               <p className="whitespace-pre-wrap text-sm break-words">{message.text}</p>
               <p
                 className={`text-xs mt-1 ${
-                  isUser ? 'text-blue-100' : isAgent ? 'text-green-100' : 'text-gray-500'
+                  isUser ? 'text-blue-100' : isAgent ? 'text-green-100' : 'text-gray-500 dark:text-gray-400'
                 }`}
               >
                 {formatTime(message.timestamp)}
