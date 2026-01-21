@@ -32,15 +32,19 @@ function App() {
           <h1 className="text-2xl sm:text-3xl font-bold text-gray-900 dark:text-white">
             Support Widget Demo
           </h1>
-          <div className="flex flex-col sm:flex-row gap-2 items-start sm:items-center">
+          <div className="flex flex-row gap-2 items-start sm:items-center">
             <ThemeToggle />
-            <button
-              onClick={handleSeedFAQs}
-              disabled={true/*isSeeding*/}
-              className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 disabled:bg-gray-400 dark:disabled:bg-gray-600 dark:bg-blue-500 dark:hover:bg-blue-600 dark:active:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors touch-manipulation text-sm sm:text-base"
-            >
-              {isSeeding ? 'Seeding...' : 'Seed FAQs'}
-            </button>
+            {
+              /*
+              <button
+                onClick={handleSeedFAQs}
+                disabled={isSeeding}
+                className="bg-blue-600 hover:bg-blue-700 active:bg-blue-800 disabled:bg-gray-400 dark:disabled:bg-gray-600 dark:bg-blue-500 dark:hover:bg-blue-600 dark:active:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors touch-manipulation text-sm sm:text-base"
+              >
+                {isSeeding ? 'Seeding...' : 'Seed FAQs'}
+              </button>
+              */
+            }
             <button
               onClick={() => setView('agent')}
               className="bg-green-600 hover:bg-green-700 active:bg-green-800 dark:bg-green-500 dark:hover:bg-green-600 dark:active:bg-green-700 text-white px-4 py-2 rounded-lg transition-colors touch-manipulation text-sm sm:text-base"
